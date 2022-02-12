@@ -46,7 +46,7 @@
             <q-item-section top side class="flex-center">
               <div class="q-gutter-xs">
                 <q-btn size="lg" type="a" :href="addon.releasesLink" target="_blank" flat dense round icon="save" />
-                <q-btn size="lg" flat dense round icon="open_in_new" />
+                <q-btn size="lg" type="a" :href="addon.repositoryLink" target="_blank" flat dense round icon="open_in_new" />
               </div>
             </q-item-section>
 
@@ -77,7 +77,7 @@ export default defineComponent({
           branch: 'main',
           description: 'An example addon for ServerPackCreator for use in version 3.x.x.',
           releasesLink: 'https://github.com/Griefed/ServerPackCreatorExampleAddon/releases/latest',
-          repositoryLink: 'https://github.com/Griefed/ServerPackCreatorExampleAddon/releases'
+          repositoryLink: 'https://github.com/Griefed/ServerPackCreatorExampleAddon'
         },
         serverpackcreatorexampleaddonalternativedeclaration: {
           index: 2,
