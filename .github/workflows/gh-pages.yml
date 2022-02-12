@@ -1,10 +1,9 @@
-name: Deploy javadocs to GitHub pages
+name: Update GitHub pages
 
 on:
   push:
     branches:
       - main
-      - master
   workflow_dispatch:
 
 jobs:
