@@ -112,10 +112,29 @@ export default defineComponent({
         multiLine: true,
         html: true,
         message:
-          '<b style="font-size: 20px;">How to get your own addon into this list:</b><br><br>' +
-          'If you have written your own addon or plugin for ' +
-          'ServerPackCreator and you would like to see it added here, please open an issue over at ServerPackCreator' +
-          'on GitHub, using the <a style="color: #c0ffee" href="">Documentation</a> template.<br>' +
+          '<span style="font-size: 20px;"><b>Why:</b></span>' +
+          '<br><br>' +
+          '<p>' +
+          'There are things which people want to do with their server packs which could most certainly be automated. Some of those' +
+          'things so special, or maybe out of place, that they would not warrant a separate feature for ServerPackCreator itself.' +
+          'It may also be that it is such a niche feature, that I either don\'t have the time to code it in, or simply don\'t want to.' +
+          'Maybe it doesn\'t fit into the overall design of ServerPackCreator, too. Who knows, it could be any of those reasons or another.' +
+          '</p>' +
+
+          '<p>' +
+          '<b>Hence, the addon functionality!</b>' +
+          '</p>' +
+
+          '<p>' +
+          'This allows people to write their own addons to expand the functionality of ServerPackCreator with their own features as' +
+          'they see fit or want.' +
+          '</p>' +
+
+          '<p>For documentation about Pf4j, visit the [Pf4j documentation](https://pf4j.org/)</p>' +
+
+          '<span style="font-size: 20px;"><b>Adding your own addon/plugin:</b></span>' +
+          '<br><br>' +
+          'If you have written your own addon or plugin for ServerPackCreator and you would like to see it added here, please open an issue over at ServerPackCreatoron GitHub, using the Documentation template.' +
           '<br>' +
           'For an addon to be accepted, you must at least provide:<br>' +
           '<ul>' +
@@ -123,6 +142,22 @@ export default defineComponent({
           '<li>The owner of the repository, and therefore the addon.</li>' +
           '<li>The branch of the repository where the main code resides in.</li>' +
           '<li>A description of the plugin or addon.</li>' +
+          '</ul>' +
+
+          'A curated list of officially acknowledged addons/plugins can be found at <b><a style="color: #c0ffee" href="https://addons.griefed.de">addons.griefed.de</a></b> (redirects to <b><a style="color: #c0ffee" href="https://griefed.github.io/ServerPackCreator-Addons-Overview/#/">GitHub Pages</a></b>)' +
+          '<br>' +
+          'Some examples for potential addons can be found <b><a style="color: #c0ffee" href="https://github.com/Griefed/ServerPackCreator/discussions/201">in this discussion thread</a></b>.' +
+          '<br>' +
+          'Some excerpts:' +
+          '<ul>' +
+          '<li>1. Changelog generator, by @TheButterbrotMan at [Feature request]: Changelog generator #198</li>' +
+          '<ul><li>A changelog generator that checks the differences to the previous version and generates a changelog.</li></ul>' +
+          '<li>2. Bundle Adoptium Java with server packs, by @kreezxil at [Feature request]: Bundle Adoptium Java #199</li>' +
+          '<ul><li>Because modpacks need one of the either Java 8, 16, or 17, it would be nice to have the corresponding <b><a style="color: #c0ffee" href="https://adoptium.net">Adoptium JDK/JRE</a></b> prebundled with the server pack.</li></ul>' +
+          '<li>3. Automatic setup of a server pack for [BlueMap](https://www.curseforge.com/minecraft/mc-mods/bluemap)</li>' +
+          '<ul><li>Check all mods in the specified modpacks mods-directory for textures, and if any are found, add the mod to' +
+          'BlueMap\'s resourcepack folder `config/bluemap/resourcepacks`, install BlueMap for the specified Minecraft and Forge/Fabric' +
+          'version and voilà!</li></ul>' +
           '</ul>',
         actions: [
           { label: 'OK', color: 'white'}
