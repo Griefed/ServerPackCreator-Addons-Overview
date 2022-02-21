@@ -1,4 +1,5 @@
 stages:
+  - test
   - docs
 
 test quasar:
@@ -15,7 +16,7 @@ test quasar:
 
 pages:
   image: griefed/gitlab-ci-cd:2.0.2
-  stage: build
+  stage: docs
   cache:
     paths:
       - node_modules/
