@@ -1,0 +1,29 @@
+stages:
+  - docs
+
+test quasar:
+  image: griefed/gitlab-ci-cd:2.0.2
+  stage: test
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - npm install
+    - rm -Rf dist
+  script:
+    - quasar build
+
+pages:
+  image: griefed/gitlab-ci-cd:2.0.2
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - npm install
+    - rm -Rf dist
+  script:
+    - quasar build
+    - cp -Rf dist/spa/* public/
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
