@@ -28,3 +28,7 @@ pages:
     - cp -Rf dist/spa/* public/
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
