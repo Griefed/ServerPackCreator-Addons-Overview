@@ -4,12 +4,12 @@
       <q-toolbar>
 
         <img
-          alt="Quasar logo"
-          src="~assets/icon.gif"
-          style="width: 52px; height: 52px"
+          alt="ServerPackCreator Addons Overview Logo"
+          src="~assets/icon.png"
+          style="width: 42px; height: 42px"
         />
 
-        <q-toolbar-title><b>ServerPackCreator Addons</b></q-toolbar-title>
+        <q-toolbar-title><b>ServerPackCreator Addons Overview</b></q-toolbar-title>
 
         <q-separator style="margin-left: 5px; margin-right: 5px;"/>
 
