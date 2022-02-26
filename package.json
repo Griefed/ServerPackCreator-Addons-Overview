@@ -20,7 +20,7 @@
     "quasar": "^2.0.0",
     "vue": "3.2.30",
     "vue-router": "^4.0.0",
-    "tsparticles": "1.41.0"
+    "tsparticles": "1.41.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.17.0",
