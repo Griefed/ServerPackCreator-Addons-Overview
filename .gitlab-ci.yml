@@ -3,7 +3,7 @@ stages:
   - docs
 
 test quasar:
-  image: griefed/gitlab-ci-cd:2.0.4
+  image: griefed/gitlab-ci-cd:2.0.5
   stage: test
   cache:
     paths:
@@ -15,7 +15,7 @@ test quasar:
     - quasar build
 
 pages:
-  image: griefed/gitlab-ci-cd:2.0.4
+  image: griefed/gitlab-ci-cd:2.0.5
   stage: docs
   cache:
     paths:
