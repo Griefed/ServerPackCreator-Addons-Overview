@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
+  <q-layout :class="$q.dark.isActive ? 'background_dark' : 'background'" view="hHh Lpr lff">
+    <q-header :class="$q.dark.isActive ? 'header_dark' : 'header_normal'" elevated>
+      <q-toolbar class="shadow-5 toolbar">
 
         <img
           alt="ServerPackCreator Addons Overview Logo"
@@ -55,6 +55,23 @@
       </q-page>
     </q-page-container>
 
+    <q-footer class="footer shadow-5" elevated height-hint="50">
+      <q-toolbar>
+        <a href="https://www.griefed.de/#/about" rel="noreferrer noopener" target="_blank">
+          <q-btn flat stretch>
+            <span class="has-inline-color" style="color:#c0ffee">Site Notice & About</span>
+          </q-btn>
+        </a>
+        <a href="https://www.griefed.de/#/privacy" rel="noreferrer noopener" target="_blank">
+          <q-btn flat stretch>
+            <span class="has-inline-color" style="color:#c0ffee">Privacy</span>
+          </q-btn>
+        </a>
+        <q-toolbar-title></q-toolbar-title>
+        Copyright © {{year}} Griefed.de
+      </q-toolbar>
+    </q-footer>
+
   </q-layout>
 </template>
 
@@ -66,21 +83,8 @@ export default defineComponent({
   name: "MainLayout",
 
   setup() {
-    return {
-      viewInfo: ref(false)
-    }
-  },
-
-  methods : {
-    toggleDarkMode() {
-      this.$q.dark.toggle();
-      this.$q.cookies.set('dark.isActive', this.$q.dark.isActive);
-    }
-  },
-
-  mounted() {
-    this.$q.dark.set(this.$q.cookies.get('dark.isActive'));
-    tsParticles.load("particles-js",{
+    let year = new Date().getFullYear();
+    let options = {
       "fpsLimit": 30,
       "particles": {
         "number": {
@@ -91,13 +95,13 @@ export default defineComponent({
           }
         },
         "color": {
-          "value": ["#325358","#C0FFEE","#31CCEC","#6A1A78"]
+          "value": ["#325358", "#C0FFEE", "#31CCEC", "#6A1A78"]
         },
         "shape": {
-          "type": ["circle","triangle","edge","polygon"],
+          "type": ["circle", "triangle", "edge", "polygon"],
           "stroke": {
             "width": 0,
-            "color": ["#325358","#C0FFEE","#31CCEC","#6A1A78"]
+            "color": ["#325358", "#C0FFEE", "#31CCEC", "#6A1A78"]
           },
           "polygon": {
             "nb_sides": 6
@@ -151,10 +155,10 @@ export default defineComponent({
         "events": {
           "onhover": {
             "enable": true,
-            "mode": ["bubble","grab"]
+            "mode": ["bubble", "grab"]
           },
           "onclick": {
-            "enable": true,
+            "enable": false,
             "mode": "push"
           },
           "resize": true
@@ -179,13 +183,28 @@ export default defineComponent({
         }
       },
       "retina_detect": true
-    });
-
+    };
+    return {
+      viewInfo: ref(false),
+      year,
+      options
+    }
+  },
+  methods : {
+    toggleDarkMode() {
+      this.$q.dark.toggle();
+      this.$q.cookies.set('dark.isActive', this.$q.dark.isActive);
+    }
+  },
+  mounted() {
+    this.$q.dark.set(this.$q.cookies.get('dark.isActive'));
+    tsParticles.load("particles-js", this.options);
   }
 
 });
 </script>
 
+<!--suppress CssReplaceWithShorthandSafely -->
 <style>
 
 #particles-js {
@@ -197,108 +216,66 @@ export default defineComponent({
   background-position: 50% 50%;
 }
 
-.normal_gradient {
-  background:
-    radial-gradient(circle at 0% 0%,
-    rgba(161, 232, 213, 0.4),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 100% 0%,
-    rgba(133, 213, 212, 0.4),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.1) 100%
-    ),
-    radial-gradient(circle at 0% 100%,
-    rgba(197, 142, 248, 0.4),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 100% 100%,
-    rgba(171, 115, 224, 0.56),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 50% 50%,
-    rgba(143, 147, 196, 0.4),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 25% 50%,
-    rgba(96, 168, 151, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    ),
-    radial-gradient(circle at 75% 50%,
-    rgba(107, 67, 190, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    ),
-    radial-gradient(circle at 50% 25%,
-    rgba(97, 166, 176, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    ),
-    radial-gradient(circle at 50% 75%,
-    rgba(137, 200, 210, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    );
-}
-
-.dark_gradient {
-  background:
-    radial-gradient(circle at 0% 0%,
-    rgba(34, 81, 114, 0.6),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 100% 0%,
-    rgba(17, 87, 85, 0.4),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.1) 100%
-    ),
-    radial-gradient(circle at 0% 100%,
-    rgb(49, 26, 133),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 100% 100%,
-    rgba(80, 20, 136, 0.6),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 50% 50%,
-    rgba(128, 134, 204, 0.4),
-    rgba(50, 83, 88, 0.1),
-    rgba(50, 83, 88, 0.05) 100%
-    ),
-    radial-gradient(circle at 25% 50%,
-    rgba(66, 117, 105, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    ),
-    radial-gradient(circle at 75% 50%,
-    rgba(98, 69, 157, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    ),
-    radial-gradient(circle at 50% 25%,
-    rgba(26, 79, 87, 0.9),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    ),
-    radial-gradient(circle at 50% 75%,
-    rgba(18, 35, 89, 1),
-    rgba(50, 83, 88, 0),
-    rgba(50, 83, 88, 0) 100%
-    );
+.toolbar {
+  border-bottom: #c0ffee 1px solid;
 }
 
 .page {
   background-image: url("~assets/background.webp");
   background-repeat: repeat;
   background-attachment: fixed;
+}
+
+.background {
+  background: #fff8eb;
+}
+
+.background_dark {
+  background: #a1a1a1;
+}
+
+.header_normal {
+  background: url("~assets/tile.webp");
+  background-repeat: repeat-x;
+  background-color: linear-gradient(
+    150deg,
+    rgb(50, 83, 88) 15%,
+    #76cead 70%);
+}
+
+.header_dark {
+  background: url("~assets/tile.webp");
+  background-repeat: repeat-x;
+  background-color: linear-gradient(
+    200deg,
+    rgb(26, 44, 39) 15%,
+    #0b3c6a 70%);
+}
+
+.footer {
+  border-top: #c0ffee 1px solid;
+  background: url("~assets/tile.webp");
+  background-repeat: repeat-x;
+  background-color: linear-gradient(
+    150deg,
+    rgb(50, 83, 88) 15%,
+    #76cead 70%);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
 
 </style>

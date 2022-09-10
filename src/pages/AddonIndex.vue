@@ -32,7 +32,7 @@
             <q-item-section top>
 
               <q-item-label lines="1">
-                <span class="text-weight-bolder">[{{addon.owner}}/{{addon.name}}]</span>
+                <span class="text-weight-bolder">[{{ addon.owner }}/{{ addon.name }}]</span>
                 <span class="text-grey-8"> - {{ addon.type }}</span>
                 <span class="text-grey-8"> - {{ addon.branch }}</span>
               </q-item-label>
@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "AddonIndex",
@@ -76,29 +76,9 @@ export default defineComponent({
           owner: "Griefed",
           type: "GitHub",
           branch: "main",
-          description: "An example addon for ServerPackCreator for use in version 3.x.x.",
+          description: "An example addon for ServerPackCreator for use in version 3.x.x. Provides examples for every available extension point, how to edit server pack specific extension configurations and how to edit global addon configurations.",
           releasesLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon/releases/latest",
           repositoryLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon"
-        },
-        serverpackcreatorexampleaddonalternativedeclaration: {
-          index: 2,
-          name: "ServerPackCreatorExampleAddon",
-          owner: "Griefed",
-          type: "GitHub",
-          branch: "alternativeExtensionDeclaration",
-          description: "An example addon for ServerPackCreator for use in version 3.x.x. This example shows a different approach to the extension declaration and class structure.",
-          releasesLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon/releases/latest",
-          repositoryLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon/tree/alternativeExtensionDeclaration"
-        },
-        serverpackcreatorexampleaddontetris: {
-          index: 3,
-          name: "ServerPackCreatorExampleAddon",
-          owner: "Griefed",
-          type: "GitHub",
-          branch: "tetris",
-          description: "An example addon for ServerPackCreator for use in version 3.x.x. This plugin adds a single simple tab containing but a single button. \"Press Play On Tape\". Upon pressing said button, you can play Tetris in a new windows! Playing Tetris whilst a server pack is generating? Yes please!",
-          releasesLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon/releases/latest",
-          repositoryLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon/tree/tetris"
         }
       }
     };
