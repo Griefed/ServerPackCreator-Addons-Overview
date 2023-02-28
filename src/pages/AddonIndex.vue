@@ -70,15 +70,15 @@ export default defineComponent({
   setup() {
     return {
       addons: {
-        serverpackcreatorexampleaddon: {
+        serverPackCreatorExamplePlugin: {
           index: 1,
-          name: "ServerPackCreatorExampleAddon",
+          name: "ServerPackCreator Example Plugin",
           owner: "Griefed",
           type: "GitHub",
           branch: "main",
-          description: "An example addon for ServerPackCreator for use in version 3.x.x. Provides examples for every available extension point, how to edit server pack specific extension configurations and how to edit global addon configurations.",
-          releasesLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon/releases/latest",
-          repositoryLink: "https://github.com/Griefed/ServerPackCreatorExampleAddon"
+          description: "An example plugin for ServerPackCreator for use in version 4.x. Provides examples for every available extension point, how to edit server pack specific extension configurations and how to edit global plugin configurations.",
+          releasesLink: "https://github.com/Griefed/ServerPackCreator/releases/latest",
+          repositoryLink: "https://github.com/Griefed/ServerPackCreator/tree/main/serverpackcreator-plugin-example"
         }
       }
     };
