@@ -11,7 +11,7 @@
             :class="this.$q.platform.is.mobile ? 'text-weight-bolder text-h6' : 'text-weight-bolder text-h5'"
             :style="this.$q.platform.is.mobile ? 'font-size: 18px;' : ''"
           >
-            Curated list of plugins/addons for ServerPackCreator:
+            Curated list of plugins for ServerPackCreator:
 
             <q-btn
               icon="info"
@@ -79,6 +79,16 @@ export default defineComponent({
           description: "An example plugin for ServerPackCreator for use in version 4.x. Provides examples for every available extension point, how to edit server pack specific extension configurations and how to edit global plugin configurations.",
           releasesLink: "https://github.com/Griefed/ServerPackCreator/releases/latest",
           repositoryLink: "https://github.com/Griefed/ServerPackCreator/tree/main/serverpackcreator-plugin-example"
+        },
+        nekodetector: {
+          index: 2,
+          name: "NekoDetector",
+          owner: "Griefed",
+          type: "GitHub",
+          branch: "master",
+          description: "Automatically scan your modpack and server pack for Nekoclient infection(s) whilst using ServerPackCreator",
+          releasesLink: "https://github.com/Griefed/spc-nekodetector-plugin/releases/latest",
+          repositoryLink: "https://github.com/Griefed/spc-nekodetector-plugin"
         }
       }
     };
@@ -103,31 +113,31 @@ export default defineComponent({
           "</p>" +
 
           "<p>" +
-          "<b>Hence, the addon functionality!</b>" +
+          "<b>Hence, the plugin functionality!</b>" +
           "</p>" +
 
           "<p>" +
-          "This allows people to write their own addons to expand the functionality of ServerPackCreator with their own features as" +
+          "This allows people to write their own plugins to expand the functionality of ServerPackCreator with their own features as" +
           "they see fit or want." +
           "</p>" +
 
           "<p>For documentation about Pf4j, visit the [Pf4j documentation](https://pf4j.org/)</p>" +
 
-          "<span style=\"font-size: 20px;\"><b>Adding your own addon/plugin:</b></span>" +
+          "<span style=\"font-size: 20px;\"><b>Adding your own plugin:</b></span>" +
           "<br><br>" +
-          "If you have written your own addon or plugin for ServerPackCreator and you would like to see it added here, please open an issue over at ServerPackCreatoron GitHub, using the Documentation template." +
+          "If you have written your own plugin for ServerPackCreator and you would like to see it added here, please open an issue over at ServerPackCreatoron GitHub, using the Documentation template." +
           "<br>" +
-          "For an addon to be accepted, you must at least provide:<br>" +
+          "For a plugin to be accepted, you must at least provide:<br>" +
           "<ul>" +
-          "<li>The name of the repository, and therefore the addon.</li>" +
-          "<li>The owner of the repository, and therefore the addon.</li>" +
+          "<li>The name of the repository, and therefore the plugin.</li>" +
+          "<li>The owner of the repository, and therefore the plugin.</li>" +
           "<li>The branch of the repository where the main code resides in.</li>" +
-          "<li>A description of the plugin or addon.</li>" +
+          "<li>A description of the plugin.</li>" +
           "</ul>" +
 
-          "A curated list of officially acknowledged addons/plugins can be found at <b><a style=\"color: #c0ffee\" href=\"https://addons.griefed.de\">addons.griefed.de</a></b> (redirects to <b><a style=\"color: #c0ffee\" href=\"https://griefed.github.io/ServerPackCreator-Addons-Overview/#/\">GitHub Pages</a></b>)" +
+          "A curated list of officially acknowledged plugins can be found at <b><a style=\"color: #c0ffee\" href=\"https://addons.griefed.de\">addons.griefed.de</a></b> (redirects to <b><a style=\"color: #c0ffee\" href=\"https://griefed.github.io/ServerPackCreator-Addons-Overview/#/\">GitHub Pages</a></b>)" +
           "<br>" +
-          "Some examples for potential addons can be found <b><a style=\"color: #c0ffee\" href=\"https://github.com/Griefed/ServerPackCreator/discussions/201\">in this discussion thread</a></b>." +
+          "Some examples for potential plugins can be found <b><a style=\"color: #c0ffee\" href=\"https://github.com/Griefed/ServerPackCreator/discussions/201\">in this discussion thread</a></b>." +
           "<br>" +
           "Some excerpts:" +
           "<ul>" +
