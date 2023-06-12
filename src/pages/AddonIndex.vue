@@ -86,9 +86,19 @@ export default defineComponent({
           owner: "Griefed",
           type: "GitHub",
           branch: "master",
-          description: "Automatically scan your modpack and server pack for Nekoclient infection(s) whilst using ServerPackCreator",
+          description: "Automatically scan your modpack and server pack for Nekoclient infection(s) whilst using ServerPackCreator, using NekoDetector.",
           releasesLink: "https://github.com/Griefed/spc-nekodetector-plugin/releases/latest",
           repositoryLink: "https://github.com/Griefed/spc-nekodetector-plugin"
+        },
+        jneedle: {
+          index: 3,
+          name: "jNeedle",
+          owner: "Griefed",
+          type: "GitHub",
+          branch: "master",
+          description: "Automatically scan your modpack and server pack for malware infection(s) whilst using ServerPackCreator, using jNeedle.",
+          releasesLink: "https://github.com/Griefed/spc-jneedle-plugin/releases/latest",
+          repositoryLink: "https://github.com/Griefed/spc-jneedle-plugin"
         }
       }
     };
